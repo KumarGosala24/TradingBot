@@ -1,0 +1,123 @@
+Title Page
+Project Title: CLI-Based Binance USDT-M Futures Trading Bot
+Author: Kumar Gosala
+Internship/Submission: [Your Program/Institution Name]
+Date: [Date of submission]
+
+ 1. Introduction
+This project is a CLI-based trading bot for Binance USDT-M Futures, aimed at automating the placement of various order types like market, limit, and advanced strategies such as stop-limit, OCO, TWAP, and Grid trading. It integrates with the official Binance Futures API and emphasizes secure order placement, structured logging, and user input validation.
+
+⚙️ 2. Project Setup
+Tools Used:
+
+Python
+
+Binance Futures API
+
+Loguru (logging)
+
+CLI interface
+
+Virtualenv (environment)
+
+Folder Structure:
+
+css
+Copy
+Edit
+/binance_trading_bot/
+├── src/
+│   ├── main.py
+│   ├── binance_client.py
+│   ├── market_orders.py
+│   ├── limit_orders.py
+│   ├── validators.py
+│   └── advanced/
+│       ├── stop_limit.py
+│       ├── oco.py
+│       ├── twap.py
+│       └── grid.py
+├── bot.log
+├── README.md
+└── report.pdf
+3. Order Types Implemented
+ Core Orders
+Market Order
+Instantly places a buy or sell order at current market price.
+ Implemented using MARKET order type.
+
+Limit Order
+Places an order at a specific price.
+ Implemented using LIMIT + timeInForce=GTC.
+
+ Advanced Orders
+Stop-Limit Order
+Triggers a limit order after a stop price is hit.
+ Uses STOP or STOP_MARKET with stopPrice.
+
+OCO Order
+Simulates Take Profit and Stop Loss simultaneously.
+ Two conditional orders: one TAKE_PROFIT_MARKET, one STOP_MARKET.
+
+TWAP (Time-Weighted Average Price)
+ Splits large order into smaller ones placed over time.
+
+Grid Orders
+ Places buy-low/sell-high orders within a price range.
+
+ 4. Screenshots of Execution
+(Insert terminal screenshots below each section. You can take screenshots with Windows+Shift+S or Snipping Tool.)
+
+4.1 Market Order CLI
+Screenshot of terminal placing market order.
+
+4.2 Limit Order CLI
+Screenshot of terminal placing limit order.
+
+4.3 Stop-Limit Order
+Screenshot of Stop-Limit CLI inputs.
+
+4.4 OCO Order Simulation
+Screenshot showing two orders placed for SL & TP.
+
+4.5 TWAP Order Execution
+Screenshot of 3-5 orders executed with sleep interval.
+
+4.6 Grid Order Placement
+Screenshot showing multiple buy/sell orders placed.
+
+ 5. Sample Logs (bot.log)
+text
+Copy
+Edit
+2025-07-27 14:03:23.123 | INFO  | Market order placed: BUY BTCUSDT 0.01
+2025-07-27 14:06:10.554 | INFO  | Limit order placed: SELL ETHUSDT 0.02 @ 3100
+2025-07-27 14:12:45.782 | INFO  | Stop-Limit triggered @ 62000 for BTCUSDT
+2025-07-27 14:20:33.229 | INFO  | TWAP Order 1/3 placed
+2025-07-27 14:20:43.229 | INFO  | TWAP Order 2/3 placed
+ 6. Challenges Faced
+Binance Futures Testnet does not natively support OCO: required simulated workaround.
+
+TWAP required custom loop logic with error handling and timing.
+
+Grid strategy needed precision tuning to avoid order collisions or slippage.
+
+ 7. Outcome & Learnings
+Learned how to work with real-world APIs (Binance Futures).
+
+Built a modular, production-grade CLI app.
+
+Gained experience in input validation, structured logging, and trading logic.
+
+Bonus orders gave insight into algorithmic trading.
+
+ 8. Next Steps (Optional)
+Add indicators (RSI, MACD) for strategy-based trading.
+
+Add Telegram/Email alerts on order execution.
+
+Add Docker support for deployment.
+
+ Acknowledgment
+Thanks to Binance API docs, Python community, and mentors for their support and guidance.
+
