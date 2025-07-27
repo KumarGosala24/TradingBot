@@ -69,7 +69,7 @@ python src/main.py
 ### Contact
 
 Author: Kumar Gosala
-LinkedIn: linkedin.com/in/kumar-gosala
+LinkedIn: [Link Text](https://www.linkedin.com/in/sowjanya-kumar-gosala/)
 Email: kumargosala2024@gmail.com
 
 
